@@ -24,7 +24,7 @@ app.listen(app.get('port'), function() {
 });
 
 app.get('/db', function (request, response) {
-  pg.connect('postgres://rnsqdefrhkajbe:4a1fdee2b026081ace09775aae302e345011cb18935b247765cd86a019651021@ec2-54-163-240-7.compute-1.amazonaws.com:5432/dbsp4rmd8r5cfn', function(err, client, done) {
+  pg.connect('postgres://zmfgqjwgcpaexh:c8a939a0a627de249b5ecc3a27d5926cd405cc0231b932c147d48e477bef6b1f@ec2-54-83-47-194.compute-1.amazonaws.com:5432/d84onlgvnolscr', function(err, client, done) {
     client.query('SELECT * FROM test_table ORDER by id ASC', function(err, result) {
       done();
       if (err)
