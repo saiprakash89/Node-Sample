@@ -53,3 +53,7 @@ app.get('/test', function(req, res){
 	res.render('pages/test', {id: req.query.id} );
 	console.log('********* Query Parameter: ' + req.query.id);
 });
+
+app.post('/test', function(req, res){
+	console.log('********* POST Request: ' + req);
+});

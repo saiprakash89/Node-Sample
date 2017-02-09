@@ -8,6 +8,11 @@
 		<div class="jumbotron text-center">
   		  <h1>Passed in parameter is --> <%= id%></h1>
   		</div>
+  		<form method="post" action="/test">
+  			<input type="text" name="testName" value=<%= id %>>
+  			<input type="text" name="testName1" value="test">
+  			<input type="submit" name="submit" value="Submit">
+  		</form>
 	</body>
 	
 </html>
