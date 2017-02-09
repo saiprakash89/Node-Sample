@@ -49,6 +49,6 @@ app.post('/canvas/callback', function(req,res){
 });
 
 //Test
-app.post('/test', function(req, res){
+app.get('/test', function(req, res){
 	console.log('********* Query Parameter: ' + req.query.id);
 });
