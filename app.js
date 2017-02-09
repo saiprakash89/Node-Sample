@@ -58,5 +58,6 @@ app.get('/test', function(req, res){
 });
 
 app.post('/test', function(req, res){
-	console.log('********* POST Request: ' + req.body.testName);
+	console.log('********* POST Request: ' + req.body.selectList);
+	return res.redirect('/test');
 });

@@ -9,8 +9,16 @@
   		  <h1>Passed in parameter is --> <%= id%></h1>
   		</div>
   		<form method="post" action="/test">
+  		
   			<input type="text" name="testName" value=<%= id %>>
   			<input type="text" name="testName1" value="test">
+  			<select name="selectList">
+  				<option value="volvo">Volvo</option>
+  				<option value="saab">Saab</option>
+  				<option value="mercedes">Mercedes</option>
+ 				<option value="audi">Audi</option>
+			</select>
+
   			<input type="submit" name="submit" value="Submit">
   		</form>
 	</body>
