@@ -50,5 +50,6 @@ app.post('/canvas/callback', function(req,res){
 
 //Test
 app.get('/test', function(req, res){
+	res.render('pages/test', {id: req.query.id} );
 	console.log('********* Query Parameter: ' + req.query.id);
 });
