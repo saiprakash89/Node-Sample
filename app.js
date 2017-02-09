@@ -47,3 +47,8 @@ app.post('/canvas/callback', function(req,res){
         return res.redirect('/');
     });
 });
+
+//Test
+app.post('/test', function(req, res){
+	console.log('********* Query Parameter: ' + req.query.id);
+});
