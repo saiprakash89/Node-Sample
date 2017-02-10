@@ -75,6 +75,7 @@ app.post('/test', function(req, res){
 				console.log('Error occurred while trying to update the record with id: ' + req.body.orderId + ' ' + err);
 				res.send('Error ' + err);
 			} else {
+				console.log('Redirecting to test with ID: ' + req.body.orderId);
 				res.render('/test?id=' + req.body.orderId);
 			}
 		});
