@@ -76,9 +76,9 @@ app.post('/test', function(req, res){
 				res.send('Error ' + err);
 			} else {
 				console.log('Redirecting to test with ID: ' + req.body.orderId);
-				res.render('/test?id=' + req.body.orderId);
+				return res.redirect('/test?id=' + req.body.orderId);
 			}
 		});
 	});
-	return res.redirect('/test');
+	//return res.redirect('/test');
 });
