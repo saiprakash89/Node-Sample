@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<link rel='stylesheet' href='/salesforce-ux/design-system/assets/styles/salesforce-lightning-design-system.min.css' />
 	</head>
 
 	<body>
 		<a href="/">Home</a>
-		<div class="jumbotron text-center">
-  		  <h1>Passed in parameter is --> <%= id%></h1>
-  		</div>
   		<form method="post" action="/test">
-  		
-  			<input type="text" name="orderId" value=<%= id %>>
-  			<%= selectList %>
+  			<input type="text" name="orderId" style="display:none;" value=<%= id %>>
+  			<h3>The order is "<%= selectList %>"</h3>
+  			<br/>
 			<select name="selectList">
   				<option value="Not Started" <% if(selectList == 'Not Started') { %> Selected <% } %> >Not Started</option>
   				<option value="In Process" <% if(selectList == 'In Process') { %> Selected <% } %> >In Process</option>
@@ -19,9 +17,8 @@
  				<option value="Delivered" <% if(selectList == 'Delivered') { %> Selected <% } %> >Delivered</option>
  				<option value="Returned" <% if(selectList == 'Returned') { %> Selected <% } %> >Returned</option>
 			</select>
-
-  			<input type="submit" name="submit" value="Submit">
+			<br/>
+  			<input type="submit" name="submit" style="slds-button" value="Submit">
   		</form>
 	</body>
-	
 </html>
