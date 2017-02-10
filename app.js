@@ -59,9 +59,7 @@ app.get('/test', function(req, res){
 				console.log('Error occurred while trying to access the record with id: ' + req.query.id + ' ' + err);
 				res.send('Error ' + err);
 			} else {
-				for (var i : result){
-					console.log('******Rows returned: ' + i);
-				}
+				console.log('******Rows returned: ' + result[1]);
 				res.render('pages/test', {id: req.query.id, selectList: result.rows});
 			}
 		});
