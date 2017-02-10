@@ -12,12 +12,12 @@
   		
   			<input type="text" name="orderId" value=<%= id %>>
   			<%= selectList %>
-			<select name="selectList" value=<%= selectList %>>
+			<select name="selectList">
   				<option value="Not Started" <% if(selectList == 'Not Started') { %> Selected <% } %> >Not Started</option>
   				<option value="In Process" <% if(selectList == 'In Process') { %> Selected <% } %> >In Process</option>
-  				<option value="Shipped">Shipped</option>
- 				<option value="Delivered">Delivered</option>
- 				<option value="Returned">Returned</option>
+  				<option value="Shipped" <% if(selectList == 'Shipped') { %> Selected <% } %> >Shipped</option>
+ 				<option value="Delivered" <% if(selectList == 'Delivered') { %> Selected <% } %> >Delivered</option>
+ 				<option value="Returned" <% if(selectList == 'Returned') { %> Selected <% } %> >Returned</option>
 			</select>
 
   			<input type="submit" name="submit" value="Submit">
