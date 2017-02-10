@@ -70,7 +70,7 @@ app.get('/test', function(req, res){
 app.post('/test', function(req, res){
 	console.log('********* POST Request: ' + req.body.selectList);
 	pg.connect('postgres://zmfgqjwgcpaexh:c8a939a0a627de249b5ecc3a27d5926cd405cc0231b932c147d48e477bef6b1f@ec2-54-83-47-194.compute-1.amazonaws.com:5432/d84onlgvnolscr', function(err, client, done) {
-		client.query('UPDATE test_table SET name = "' + req.body.selectList + '" WHERE id = ' + req.body.orderId, function(err, result) {
+		client.query('UPDATE test_table SET name = \'' + req.body.selectList + '\' WHERE id = ' + req.body.orderId, function(err, result) {
 			if(err) {
 				console.log('Error occurred while trying to update the record with id: ' + req.body.orderId + ' ' + err);
 				res.send('Error ' + err);
