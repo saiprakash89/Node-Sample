@@ -10,7 +10,7 @@
   			<input type="text" name="orderId" style="display:none;" value=<%= id %>>
   			<h3>The order is "<%= selectList %>"</h3>
   			<br/>
-			<select name="selectList">
+			<select name="selectList" class="slds-dropdown">
   				<option value="Not Started" <% if(selectList == 'Not Started') { %> Selected <% } %> >Not Started</option>
   				<option value="In Process" <% if(selectList == 'In Process') { %> Selected <% } %> >In Process</option>
   				<option value="Shipped" <% if(selectList == 'Shipped') { %> Selected <% } %> >Shipped</option>
