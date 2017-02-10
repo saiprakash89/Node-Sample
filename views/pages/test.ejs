@@ -13,8 +13,8 @@
   			<input type="text" name="orderId" value=<%= id %>>
   			<%= selectList %>
 			<select name="selectList" value=<%= selectList %>>
-  				<option value="Not Started">Not Started</option>
-  				<option value="In Process">In Process</option>
+  				<option value="Not Started" <% if(selectList == 'Not Started') { %> Selected <% } %> >Not Started</option>
+  				<option value="In Process" <% if(selectList == 'In Process') { %> Selected <% } %> >In Process</option>
   				<option value="Shipped">Shipped</option>
  				<option value="Delivered">Delivered</option>
  				<option value="Returned">Returned</option>
