@@ -15,7 +15,7 @@
   				<input type="text" name="orderId" style="display:none;" value=<%= id %>>
   				<p class="slds-text-heading--label slds-m-bottom--small">The order is "<%= selectList %>"</p>
   				Select an option and hit submit to change the status of the order: 
-				<select name="selectList" class="slds-dropdown">
+				<select name="selectList" class="slds-dropdown" style="left:0%;">
   					<option value="Not Started" <% if(selectList == 'Not Started') { %> Selected <% } %> >Not Started</option>
   					<option value="In Process" <% if(selectList == 'In Process') { %> Selected <% } %> >In Process</option>
   					<option value="Shipped" <% if(selectList == 'Shipped') { %> Selected <% } %> >Shipped</option>
