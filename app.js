@@ -53,11 +53,38 @@ app.post('/canvas/callback', function(req,res){
 
 //Test
 app.get('/test', function(req, res){
-	res.render('pages/test', {id: req.query.id} );
+	pg.connect('postgres://zmfgqjwgcpaexh:c8a939a0a627de249b5ecc3a27d5926cd405cc0231b932c147d48e477bef6b1f@ec2-54-83-47-194.compute-1.amazonaws.com:5432/d84onlgvnolscr', function(err, client, done) {
+		client.query('SELECT * FROM test_table WHERE id = ' + req.query.id, function(err, result) {
+			if(err) {
+				console.log('Error occurred while trying to access the record with id: ' + req.query.id + ' ' + err);
+				res.send('Error ' + err);
+			} else {
+				res.render('pages/test', {id: req.query.id, selectList: result.rows});
+			}
+		});
+	});
+	//res.render('pages/test', {id: req.query.id} );
 	console.log('********* Query Parameter: ' + req.query.id);
 });
 
 app.post('/test', function(req, res){
 	console.log('********* POST Request: ' + req.body.selectList);
+	pg.connect('postgres://zmfgqjwgcpaexh:c8a939a0a627de249b5ecc3a27d5926cd405cc0231b932c147d48e477bef6b1f@ec2-54-83-47-194.compute-1.amazonaws.com:5432/d84onlgvnolscr', function(err, client, done) {
+		client.query('SELECT * FROM test_table WHERE id = ' + req.body.orderId, function(err, result) {
+			if(err) {
+				console.log('Error occurred while trying to access the record with id: ' + req.body.orderId + ' ' + err);
+				res.send('Error ' + err);
+			} else {
+				client.query('UPDATE test_table SET name = ' + req.body.selectList + ' WHERE id = ' + req.body.orderId, function(err, result) {
+					if(err) {
+						console.log('Error occurred while trying to update the record with id: ' + req.body.orderId + ' ' + err);
+						res.send('Error ' + err);
+					} else {
+						res.render('/test?id=' + req.body.orderId);
+					}
+				});
+			}
+		});
+	});
 	return res.redirect('/test');
 });
