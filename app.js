@@ -34,7 +34,7 @@ app.post('/', function(request, response) {
 			response.end();//return response.render('error',{error: error});
         }
         //saves the token details into session
-        sftools.saveCanvasDetailsInSession(request,canvasRequest);
+        //sftools.saveCanvasDetailsInSession(request,canvasRequest);
         return response.redirect('/');
     });
   //response.render('pages/index');
