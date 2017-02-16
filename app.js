@@ -19,7 +19,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 app.get('/', function(request, response) {
-  console.log('********************** Signed Request: ' + request.body.signed_request);
+  console.log('********************** Signed Request: ' + JSON.stringify(request.body));
   response.render('pages/index');
 });
 
