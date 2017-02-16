@@ -47,6 +47,8 @@ app.post('/canvas/callback', function(req,res){
         }
         //saves the token details into session
         sftools.saveCanvasDetailsInSession(req,canvasRequest);
+        console.log('********************** Request Body: ' + req.body);
+        console.log('********************** Signed Request: ' + req.signed_request);
         return res.redirect('/');
     });
 });
