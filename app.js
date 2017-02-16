@@ -28,6 +28,7 @@ app.post('/', function(request, response) {
   sftools.canvasCallback(request.body, SF_CANVASAPP_CLIENT_SECRET, function(error, canvasRequest){
         if(error){
             response.statusCode = 400;
+            console.log('*******ERROR : ' + error);
             return response.render('error',{error: error});
         }
         //saves the token details into session
