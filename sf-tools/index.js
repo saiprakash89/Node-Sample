@@ -47,6 +47,8 @@ function verifyAndDecode(input, secret){
     var canvasRequest;
     try {
         canvasRequest = JSON.parse(json_envelope);
+        console.log('************* JSON Envelope ' + JSON.stringify(json_envelope));
+        console.log('************* JSON Envelope ' + canvasRequest);
         algorithm = canvasRequest.algorithm ? "HMACSHA256" : canvasRequest.algorithm;
     } catch (e) {
         throw 'Error deserializing JSON: '+ e;

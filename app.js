@@ -25,7 +25,16 @@ app.get('/', function(request, response) {
 
 app.post('/', function(request, response) {
   console.log('********************** POST Signed Request: ' + JSON.stringify(request.body));
-  response.render('pages/index');
+  sftools.canvasCallback(request.body, SF_CANVASAPP_CLIENT_SECRET, function(error, canvasRequest){
+        if(error){
+            response.statusCode = 400;
+            return response.render('error',{error: error});
+        }
+        //saves the token details into session
+        sftools.saveCanvasDetailsInSession(request,canvasRequest);
+        return response.redirect('/');
+    });
+  //response.render('pages/index');
 });
 
 app.listen(app.get('port'), function() {
