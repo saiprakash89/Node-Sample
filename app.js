@@ -33,8 +33,6 @@ app.post('/', function(request, response) {
 			response.write("Some plain text can be here " + error); //write allows you to write your response in the format mentioned above
 			response.end();//return response.render('error',{error: error});
         }
-        //saves the token details into session
-        //sftools.saveCanvasDetailsInSession(request,canvasRequest);
         return response.redirect('/');
     });
   //response.render('pages/index');

@@ -62,7 +62,7 @@ function verifyAndDecode(input, secret){
     if (encodedSig !== expectedSig) {
        throw 'Bad signed JSON Signature!';
     }
-   	
+   	console.log('************* Signatures match');
 
 	return canvasRequest;
 
