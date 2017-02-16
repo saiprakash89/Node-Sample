@@ -29,7 +29,6 @@ app.post('/', function(request, response) {
         if(error){
             response.statusCode = 400;
             console.log('*******ERROR : ' + error);
-            response.writeHead(200, {"Context-Type": "text/plain"}); //writeHead is used to set the header of the response
 			response.write("Some plain text can be here " + error); //write allows you to write your response in the format mentioned above
 			response.end();//return response.render('error',{error: error});
         }
